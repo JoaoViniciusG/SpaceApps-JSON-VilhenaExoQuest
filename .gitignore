@@ -1,0 +1,5 @@
+Api/.venv
+Api/**/*.pyc
+
+Evaluation/.venv
+Evaluation/**/*.pyc

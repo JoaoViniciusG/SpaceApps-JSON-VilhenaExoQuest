@@ -1,0 +1,28 @@
+{
+  "app": {
+    "name": "Exo Explorers",
+    "version": "1.0"
+  },
+  "database": {
+    "folder": "./data/sqlite/",
+    "filename": "database.db",
+    "models_folder": "database/models"
+  },
+  "api": {
+    "folder": "./app/backend/api",
+    "base_url": "127.0.0.1",
+    "port": 9000
+  },
+  "frontend": {
+    "folder": "app/frontend",
+    "base_url": "http://localhost:3000"
+  },
+  "data": {
+    "models_folder": "data/models/",
+    "models_koi_name": "model_koi.joblib",
+    "models_toi_name": "model_toi.joblib",
+    "raw_folder": "data/raw/",
+    "raw_koi": "koi.csv",
+    "raw_toi": "toi.csv"
+  }
+}
