@@ -65,7 +65,7 @@ def main():
 
       for _, row in df_raw.iterrows():
         planet = Exoplanet(
-          id=str(row["toipfx"]),
+          id=str(row["kepoi_name"]),
           star_id=str(row["kepoi_name"]).split(".")[0],
           name=row.get("kepler_name"),
           probability=row.get("probability"),
