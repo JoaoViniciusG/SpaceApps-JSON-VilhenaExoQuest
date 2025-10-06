@@ -22,13 +22,20 @@ class ExoplanetRepository:
       inclination_deg=e.inclination_deg) for e in data]
 
   @staticmethod
-  def getStarIdByLike(db: Session, search: str, page: int, pageSize: int = 10) -> List[str]:
+  def getStarIdByLike(db: Session, mission: int, search: str, page: int, pageSize: int = 10) -> List[str]:
+    if mission == 0:
+      mission_value = True
+    elif mission == 1:
+      mission_value = Exoplanet.id.like("K%")
+    elif mission == 2:
+      mission_value = Exoplanet.id.like("T%")
+          
     data = db.query(Exoplanet.star_id).filter(or_(
-          Exoplanet.name.like(f"%{search}%"),
-          Exoplanet.id.like(f"%{search}%"),
-          Exoplanet.star_id.like(f"%{search}%"),
-          )
-        ).offset((page - 1) * pageSize).limit(pageSize)
+      Exoplanet.name.like(f"%{search}%"),
+      Exoplanet.id.like(f"%{search}%"),
+      Exoplanet.star_id.like(f"%{search}%"),
+      )
+    ).filter(mission_value).offset((page - 1) * pageSize).limit(pageSize)
     
     return data
   

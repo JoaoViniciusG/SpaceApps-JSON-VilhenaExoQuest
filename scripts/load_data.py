@@ -84,7 +84,7 @@ def main():
     with Session(engine) as session:
       for _, row in stars_df.iterrows():
         star = Stars(
-          id=row["toipfx"],
+          id=f"T{row['toipfx']}",
           effective_tempk=row.get("st_teff"),
           mass_solar=None, 
           radius_solar=row.get("st_rad"),
@@ -95,9 +95,9 @@ def main():
 
       for _, row in df_raw.iterrows():
         planet = Exoplanet(
-          id=row["toi"],
-          star_id=row["toipfx"],
-          name=row.get("toi"),
+          id=f"TOI{row['toi']}",
+          star_id=f"T{row['toipfx']}",
+          name=f"TOI{row['toi']}",
           probability=row.get("probability"),
           radius_earth=row.get("pl_rade"),
           equilibrium_tempk=row.get("pl_eqt"),

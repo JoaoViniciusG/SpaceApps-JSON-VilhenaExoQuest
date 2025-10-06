@@ -18,8 +18,8 @@ def getPage(page: int, db: Session = Depends(get_db)):
   return res
 
 @router.get("/search")
-def getPage(search: str, page: int, db: Session = Depends(get_db)):
-  starsIds = ExoplanetRepository.getStarIdByLike(db, search, page)
+def getPage(page: int, mission: int = 0, search: str = "", db: Session = Depends(get_db)):
+  starsIds = ExoplanetRepository.getStarIdByLike(db, mission, search, page)
   print("IDS: ", starsIds)
   stars = StarRepository.getByIds(db, starsIds)
   

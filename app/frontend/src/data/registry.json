@@ -1,0 +1,108 @@
+{
+  "version": "1.0",
+  "stars": [
+    {
+      "id": "kepler-90",
+      "name": "Kepler-90",
+      "spectral_type": "G0",
+      "mass_solar": 1.2,
+      "radius_solar": 1.2,
+      "color": "#FFD27F"
+    },
+    {
+      "id": "keler-90",
+      "name": "Keler-90",
+      "spectral_type": "G1",
+      "mass_solar": 5.2,
+      "radius_solar": 2.2,
+      "color": "#FGD27F"
+    }
+  ],
+  "planets": [
+    {
+      "id": "keler-90",
+      "name": "Keler-90 C",
+      "star_id": "keler-90",
+      "color": "#8B4513",
+      "size": 0.15,
+      "distance": 6.0,
+      "speed": 1.2,
+      "radius_earth": 1.31,
+      "equilibrium_temp_k": 700,
+      "orbital_period_days": 90.0,
+      "semi_major_axis_au": 0.08,
+      "eccentricity": 0.05,
+      "inclination_deg": 89.6,
+      "discovery_method": "Transit",
+      "discovery_year": 2023
+    },
+    {
+      "id": "keler-91",
+      "name": "Keler-90 C",
+      "star_id": "keler-90",
+      "color": "#8B4513",
+      "size": 0.15,
+      "distance": 2.0,
+      "speed": 9.2,
+      "radius_earth": 1.31,
+      "equilibrium_temp_k": 700,
+      "orbital_period_days": 7.0,
+      "semi_major_axis_au": 0.08,
+      "eccentricity": 0.05,
+      "inclination_deg": 89.6,
+      "discovery_method": "Transit",
+      "discovery_year": 2023
+    },
+    {
+      "id": "kepler-90-b",
+      "star_id": "kepler-90",
+      "name": "Kepler-90 b",
+      "color": "#8B4513",
+      "size": 0.15,
+      "distance": 2.0,
+      "speed": 1.2,
+      "radius_earth": 1.31,
+      "equilibrium_temp_k": 700,
+      "orbital_period_days": 7.0,
+      "semi_major_axis_au": 0.08,
+      "eccentricity": 0.05,
+      "inclination_deg": 89.6,
+      "discovery_method": "Transit",
+      "discovery_year": 2013
+    },
+    {
+      "id": "kepler-92-b",
+      "star_id": "kepler-90",
+      "name": "guris-90 b",
+      "color": "#8B4513",
+      "size": 0.15,
+      "distance": 2.0,
+      "speed": 5.2,
+      "radius_earth": 1.31,
+      "equilibrium_temp_k": 700,
+      "orbital_period_days": 7.0,
+      "semi_major_axis_au": 0.08,
+      "eccentricity": 0.05,
+      "inclination_deg": 89.6,
+      "discovery_method": "Transit",
+      "discovery_year": 2013
+    },
+     {
+      "id": "kelegdfr-90",
+      "name": "Kelevsr-90 C",
+      "star_id": "keler-90",
+      "color": "#8B4513",
+      "size": 0.15,
+      "distance": 6.0,
+      "speed": 1.2,
+      "radius_earth": 1.31,
+      "equilibrium_temp_k": 700,
+      "orbital_period_days": 90.0,
+      "semi_major_axis_au": 0.08,
+      "eccentricity": 0.05,
+      "inclination_deg": 89.6,
+      "discovery_method": "Transit",
+      "discovery_year": 2023
+    }
+  ]
+}
