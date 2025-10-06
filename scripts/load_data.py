@@ -85,11 +85,11 @@ def main():
       for _, row in stars_df.iterrows():
         star = Stars(
           id=row["toipfx"],
-          effective_tempk=row.get("koi_steff"),
-          mass_solar=row.get("koi_smass"),
-          radius_solar=row.get("koi_srad"),
-          metallicity_feh=row.get("koi_smet"),
-          age_gyr=row.get("koi_sage")
+          effective_tempk=row.get("st_teff"),
+          mass_solar=None, 
+          radius_solar=row.get("st_rad"),
+          metallicity_feh=None, 
+          age_gyr=None 
         )
         session.merge(star)
 
@@ -97,15 +97,14 @@ def main():
         planet = Exoplanet(
           id=row["toi"],
           star_id=row["toipfx"],
-          name=row.get("kepler_name"),
+          name=row.get("toi"),
           probability=row.get("probability"),
-          koi_score=None,
-          radius_earth=row.get("koi_prad"),
-          equilibrium_tempk=row.get("koi_teq"),
-          orbital_period_days=row.get("koi_period"),
-          semi_major_axis=row.get("koi_sma"),
-          eccentricity=row.get("koi_eccen"),
-          inclination_deg=row.get("koi_incl")
+          radius_earth=row.get("pl_rade"),
+          equilibrium_tempk=row.get("pl_eqt"),
+          orbital_period_days=row.get("pl_orbper"),
+          semi_major_axis=None ,
+          eccentricity=None ,
+          inclination_deg=None
         )
         session.merge(planet)
 
