@@ -4,6 +4,7 @@ import { Telescope, BookOpen, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useI18n } from "@/lib/i18n";
 import { LanguageToggle } from "@/components/LanguageToggle";
+import config from '../../../../config.json';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -15,10 +16,9 @@ const Home = () => {
   useEffect(() => {
   (async () => {
     try {
-      const res = await fetch("https://neoma-uninternalized-irretraceably.ngrok-free.dev/getInfos", {
+      const res = await fetch(`http://${config.api.base_url}:${config.api.port}/getInfos`, {
         headers: {
-          Accept: "application/json",
-          "ngrok-skip-browser-warning": "69420",
+          Accept: "application/json"
         },
       });
       if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
@@ -76,15 +76,10 @@ const Home = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-4 gap-6 pt-12 max-w-2xl mx-auto">
+        <div className="grid grid-cols-3 gap-6 pt-12 max-w-2xl mx-auto">
           <div className="space-y-2">
-            <p className="text-3xl font-bold text-primary">3</p>
+            <p className="text-3xl font-bold text-primary">2</p>
             <p className="text-sm text-muted-foreground">{t("home.stats.missions")}</p>
-          </div>
-
-          <div className="space-y-2">
-            <p className="text-3xl font-bold text-primary">100+</p>
-            <p className="text-sm text-muted-foreground">{t("home.stats.systems")}</p>
           </div>
 
           <div className="space-y-2">

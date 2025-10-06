@@ -20,15 +20,15 @@ def run_api():
 def run_frontend():
   print("🌐 Starting Frontend (Next.js)...")
   subprocess.Popen(
-    ["npm", "run", "dev"],
-    cwd=FRONTEND_DIR
+    ["npm.cmd", "run", "dev"],
+    cwd="./app/frontend"
   )
 
 if __name__ == "__main__":
   print("🔥 Starting SpaceApps (API + Front)...\n")
   run_api()
   time.sleep(3)
-  # run_frontend()
+  run_frontend()
 
   print(f"\n✅ API running in: {BASE_URL_API}")
   print(f"✅ Frontend running in: {BASE_URL_FRONTEND}")

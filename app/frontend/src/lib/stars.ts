@@ -3,6 +3,7 @@
 //
 // Pode usar NEXT_PUBLIC_API_BASE (Next.js) ou VITE_API_BASE (Vite).
 // Também aceita window.__API_BASE__ (override em runtime).
+import config from '../../../../config.json';
 
 const API_BASE = (() => {
   // 1) Override em runtime (útil p/ testes)
@@ -22,8 +23,7 @@ const API_BASE = (() => {
     if (viteBase) return viteBase as string;
   } catch {}
 
-  // 4) Fallback (ajuste aqui para seu túnel ngrok real)
-  return "https://neoma-uninternalized-irretraceably.ngrok-free.dev";
+  return `http://${config.api.base_url}:${config.api.port}`;
 })() as string;
 
 // ===== Tipos (alinhados ao contrato da API) =====
@@ -83,9 +83,7 @@ async function fetchJSON<T>(path: string, opts: FetchOpts = {}): Promise<T> {
     const res = await fetch(url, {
       method: "GET",
       headers: {
-        Accept: "application/json",
-        // 👇 pula a landing de aviso do ngrok
-        "ngrok-skip-browser-warning": "true",
+        Accept: "application/json"
       },
       signal: signal ?? controller.signal,
       cache: "no-store",
